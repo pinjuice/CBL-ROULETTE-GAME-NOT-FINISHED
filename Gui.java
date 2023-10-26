@@ -15,8 +15,6 @@ public class Gui {
     Squares squares;
     Balance balance = new Balance(1000, balanceDisplay);
     RouletteLogic rouletteLogic;
-
-    // Add BetSlider member variable
     BetSlider betSlider;
 
     public Gui() {
@@ -60,7 +58,7 @@ public class Gui {
         labelBoard.setIcon(board);
         labelBoard.setBounds(870, 80, 454, 503);
         frame.add(labelBoard);
-
+        
         frame.setVisible(true);
     }
 
