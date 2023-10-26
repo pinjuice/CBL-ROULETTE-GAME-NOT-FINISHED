@@ -7,6 +7,7 @@ public class Gui {
     JLabel timerLabel = new JLabel();
     JLabel balanceDisplay = new JLabel();
     JLabel winningNumberLabel = new JLabel();
+    JLabel rouletteLabel = new JLabel();
 
     ChipRenderer chipRenderer;
     ChipLogic chipLogic;
@@ -58,6 +59,12 @@ public class Gui {
         labelBoard.setIcon(board);
         labelBoard.setBounds(870, 80, 454, 503);
         frame.add(labelBoard);
+
+        ImageIcon roulette = new ImageIcon("roulette_animation/roulette1.png");
+        rouletteLabel.setIcon(roulette);
+        rouletteLabel.setBounds(20, 40, 738, 671);
+        frame.add(rouletteLabel);
+        
         
         frame.setVisible(true);
     }
