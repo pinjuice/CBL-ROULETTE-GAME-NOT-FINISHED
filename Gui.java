@@ -17,6 +17,7 @@ public class Gui {
     Balance balance = new Balance(1000, balanceDisplay);
     RouletteLogic rouletteLogic;
     BetSlider betSlider;
+    RouletteAnimation rouletteAnimation;
 
     public Gui() {
         frame.setSize(1920, 1080);
@@ -35,7 +36,8 @@ public class Gui {
         frame.add(winningNumberLabel);
 
         rouletteLogic = new RouletteLogic(balance, squares, winningNumberLabel);
-        bettingTimer = new BettingTimer(timerLabel,rouletteLogic);
+        rouletteAnimation = new RouletteAnimation(rouletteLabel);
+        bettingTimer = new BettingTimer(timerLabel, rouletteLabel, rouletteLogic, rouletteAnimation);
         chipRenderer = new ChipRenderer();
         
         chipRenderer.setBounds(0, 0, 1920, 1080);

@@ -5,14 +5,18 @@ import java.awt.event.ActionListener;
 public class BettingTimer {
     private Timer timer;
     private int secondsLeft;
-    private JLabel displayLabel;
+    private JLabel rouletteLabel;  // For the roulette animation
+    private JLabel displayLabel;   // For displaying messages
     private boolean timeOver;
-    private RouletteLogic rouletteLogic;  // New field
+    private RouletteLogic rouletteLogic;
+    private RouletteAnimation rouletteAnimation;
 
-    public BettingTimer(JLabel displayLabel, RouletteLogic rouletteLogic) {
+    public BettingTimer(JLabel displayLabel, JLabel rouletteLabel, RouletteLogic rouletteLogic, RouletteAnimation rouletteAnimation) {
         this.displayLabel = displayLabel;
+        this.rouletteLabel = rouletteLabel;
         this.rouletteLogic = rouletteLogic;
-        this.secondsLeft = 30;  // Initial countdown time.
+        this.rouletteAnimation = rouletteAnimation;
+        this.secondsLeft = 1;  // Initial countdown time.
         this.timeOver = false;
 
         displayLabel.setText("Time left: "+secondsLeft +" seconds");
@@ -38,12 +42,19 @@ public class BettingTimer {
     private void endBetting() {
         timer.stop();
         displayLabel.setText("Time for betting is over");
+
+        rouletteAnimation.startAnimation();
+
         timeOver = true;
-        rouletteLogic.spin();  // Spin the roulette wheel
+        rouletteLogic.spin(); 
         rouletteLogic.checkWinningSquareAndUpdateBalance();
     }
 
     public boolean isTimeOver() {
         return timeOver;
+    }
+
+    public JLabel getRouletteLabel(){
+        return rouletteLabel;
     }
 }
