@@ -31,6 +31,8 @@ public class BettingTimer {
         timer.start();
     }
 
+    // i love 
+
     private void updateDisplay() {
         displayLabel.setText("Time left: " + secondsLeft + " seconds");
     }
