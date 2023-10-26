@@ -17,7 +17,7 @@ public class RouletteAnimation {
             images[i] = new ImageIcon("roulette_animation/roulette" + (i + 1) + ".png");
         }
 
-        int delay = 1000 / 24; // To show all images in 1 second
+        int delay = 1000 / 100; // To show all images in 1 second
         timer1 = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
