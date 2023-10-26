@@ -9,13 +9,12 @@ public class BettingTimer {
     private JLabel displayLabel;   // For displaying messages
     private boolean timeOver;
     private RouletteLogic rouletteLogic;
-    private RouletteAnimation rouletteAnimation;
 
-    public BettingTimer(JLabel displayLabel, JLabel rouletteLabel, RouletteLogic rouletteLogic, RouletteAnimation rouletteAnimation) {
+
+    public BettingTimer(JLabel displayLabel, JLabel rouletteLabel, RouletteLogic rouletteLogic) {
         this.displayLabel = displayLabel;
         this.rouletteLabel = rouletteLabel;
         this.rouletteLogic = rouletteLogic;
-        this.rouletteAnimation = rouletteAnimation;
         this.secondsLeft = 1;  // Initial countdown time.
         this.timeOver = false;
 
@@ -43,7 +42,8 @@ public class BettingTimer {
         timer.stop();
         displayLabel.setText("Time for betting is over");
 
-        rouletteAnimation.startAnimation();
+        // Start the roulette animation on rouletteLabel
+        new RouletteAnimation(rouletteLabel).startAnimation();
 
         timeOver = true;
         rouletteLogic.spin(); 
@@ -52,9 +52,5 @@ public class BettingTimer {
 
     public boolean isTimeOver() {
         return timeOver;
-    }
-
-    public JLabel getRouletteLabel(){
-        return rouletteLabel;
     }
 }

@@ -37,7 +37,7 @@ public class Gui {
 
         rouletteLogic = new RouletteLogic(balance, squares, winningNumberLabel);
         rouletteAnimation = new RouletteAnimation(rouletteLabel);
-        bettingTimer = new BettingTimer(timerLabel, rouletteLabel, rouletteLogic, rouletteAnimation);
+        bettingTimer = new BettingTimer(timerLabel, rouletteLabel, rouletteLogic);
         chipRenderer = new ChipRenderer();
         
         chipRenderer.setBounds(0, 0, 1920, 1080);
