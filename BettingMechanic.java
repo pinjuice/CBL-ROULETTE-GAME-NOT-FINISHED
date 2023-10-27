@@ -45,7 +45,7 @@ public class BettingMechanic {
             lastClickedSquare = squareIndex;  // Store the last clicked square
             if (!bettingTimer.isTimeOver() && balance.getBalance() > 0) {
                 betSlider.show();
-            }
+            }    
         }
     }
 

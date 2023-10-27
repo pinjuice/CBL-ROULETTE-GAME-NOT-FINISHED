@@ -55,7 +55,7 @@ public class Gui {
         chipLogic = new ChipLogic(chipRenderer, bettingTimer);
 
         frame.add(chipRenderer);
-
+     
         
         ImageIcon board = new ImageIcon("bettingboardCBL.jpg");
         labelBoard.setIcon(board);
@@ -67,10 +67,8 @@ public class Gui {
         rouletteLabel.setBounds(20, 40, 738, 671);
         frame.add(rouletteLabel);
         
-        
         frame.setVisible(true);
     }
-
     public static void main(String[] args) {
         new Gui();
     }
