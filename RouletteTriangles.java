@@ -3,6 +3,7 @@ import java.awt.Polygon;
 
 public class RouletteTriangles {
     public Polygon[] triangles;
+    public Point[] renderPoints;
     public RouletteTriangles() {
         triangles = new Polygon[] {
             createTriangle(387, 393, 461, 686, 387, 700, 312, 689), //0
@@ -20,6 +21,15 @@ public class RouletteTriangles {
             createTriangle(396, 392, 598, 619, 537, 662, 468, 687)  //12
             // ... Add other triangles by specifying their vertices
         };
+        renderPoints = new Point[triangles.length];
+        for (int i = 0; i < triangles.length; i++) {
+            int[] xpoints = triangles[i].xpoints;
+            int[] ypoints = triangles[i].ypoints;
+            
+            // Assuming the first and third vertices are the ones we're interested in
+            renderPoints[i] = new Point(getRenderX(xpoints[0], xpoints[2]), 
+                                        getRenderY(ypoints[0], ypoints[2]));
+        }
     }
 
     private Polygon createTriangle(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
@@ -39,5 +49,13 @@ public class RouletteTriangles {
 
     public int getNumberOfTriangles() {
         return triangles.length;
+    }
+
+    public int getRenderX(int x1, int x3) {
+        return ((x1 + x3)/2);
+    }
+
+    public int getRenderY(int y1, int y3) {
+        return ((y1 + y3)/2);
     }
 }

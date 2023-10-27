@@ -14,7 +14,7 @@ public class Chip {
         this.color = color;
         this.value = value;
     }
-
+    
     public int getX() {
         return x;
     }

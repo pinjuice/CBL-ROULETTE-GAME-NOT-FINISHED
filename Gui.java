@@ -18,6 +18,8 @@ public class Gui {
     RouletteLogic rouletteLogic;
     BetSlider betSlider;
     RouletteAnimation rouletteAnimation;
+    Chip chip;
+    RouletteTriangles rouletteTriangles;
 
     public Gui() {
         frame.setSize(1920, 1080);
@@ -35,10 +37,13 @@ public class Gui {
         winningNumberLabel.setBounds(870, 40, 300, 50);
         frame.add(winningNumberLabel);
 
-        rouletteLogic = new RouletteLogic(balance, squares, winningNumberLabel);
+        chipRenderer = new ChipRenderer();
+        // NOTE: You'll need to initialize rouletteTriangles here as well before using it
+        // rouletteTriangles = new RouletteTriangles(...);
+        rouletteTriangles = new RouletteTriangles();
+        rouletteLogic = new RouletteLogic(balance, squares, winningNumberLabel, rouletteTriangles, chipRenderer);
         rouletteAnimation = new RouletteAnimation(rouletteLabel);
         bettingTimer = new BettingTimer(timerLabel, rouletteLabel, rouletteLogic);
-        chipRenderer = new ChipRenderer();
         
         chipRenderer.setBounds(0, 0, 1920, 1080);
         chipRenderer.setOpaque(false);
@@ -56,7 +61,7 @@ public class Gui {
 
         frame.add(chipRenderer);
      
-        
+
         ImageIcon board = new ImageIcon("bettingboardCBL.jpg");
         labelBoard.setIcon(board);
         labelBoard.setBounds(870, 80, 454, 503);
