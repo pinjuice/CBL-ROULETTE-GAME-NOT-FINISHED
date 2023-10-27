@@ -42,7 +42,7 @@ public class Gui {
         // rouletteTriangles = new RouletteTriangles(...);
         rouletteTriangles = new RouletteTriangles();
         rouletteLogic = new RouletteLogic(balance, squares, winningNumberLabel, rouletteTriangles, chipRenderer);
-        rouletteAnimation = new RouletteAnimation(rouletteLabel);
+        rouletteAnimation = new RouletteAnimation(rouletteLabel, rouletteLogic);
         bettingTimer = new BettingTimer(timerLabel, rouletteLabel, rouletteLogic);
         
         chipRenderer.setBounds(0, 0, 1920, 1080);

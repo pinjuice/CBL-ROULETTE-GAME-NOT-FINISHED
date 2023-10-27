@@ -27,7 +27,6 @@ public class RouletteLogic {
         int_random = rand.nextInt(upperbound);
         System.out.println("Number that won is: " + int_random);
         updateWinningNumberDisplay();
-        placeChipOnTriangle(int_random);
     }
 
     public void checkWinningSquareAndUpdateBalance() {

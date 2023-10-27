@@ -15,7 +15,7 @@ public class BettingTimer {
         this.displayLabel = displayLabel;
         this.rouletteLabel = rouletteLabel;
         this.rouletteLogic = rouletteLogic;
-        this.secondsLeft = 1;  // Initial countdown time.
+        this.secondsLeft = 5;  // Initial countdown time.
         this.timeOver = false;
 
         displayLabel.setText("Time left: "+secondsLeft +" seconds");
@@ -43,7 +43,7 @@ public class BettingTimer {
         displayLabel.setText("Time for betting is over");
 
         // Start the roulette animation on rouletteLabel
-        new RouletteAnimation(rouletteLabel).startAnimation();
+        new RouletteAnimation(rouletteLabel, rouletteLogic).startAnimation();
 
         timeOver = true;
         rouletteLogic.spin(); 
