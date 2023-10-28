@@ -12,7 +12,7 @@ public class RouletteLogic {
     private Squares squares;
     private JLabel winningNumberLabel;
     private RouletteTriangles rouletteTriangles;
-    private Chip chip;
+    private Ball ball;
     private ChipRenderer chipRenderer;
 
     public RouletteLogic(Balance balance, Squares squares, JLabel winningNumberLabel, RouletteTriangles rouletteTriangles, ChipRenderer chipRenderer) {
@@ -48,8 +48,8 @@ public class RouletteLogic {
 
     public void placeChipOnTriangle(int triangleIndex) {
         Point renderPoint = rouletteTriangles.renderPoints[triangleIndex];
-        chip = new Chip(0, 0, Color.WHITE, 0);
-        chip.setPosition(renderPoint.x, renderPoint.y);
-        chipRenderer.addChip(chip);
+        ball = new Ball(0, 0, Color.BLUE);
+        ball.setPosition(renderPoint.x, renderPoint.y);
+        chipRenderer.addBall(ball);
     }
 }

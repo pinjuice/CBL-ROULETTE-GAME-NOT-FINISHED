@@ -18,7 +18,6 @@ public class Gui {
     RouletteLogic rouletteLogic;
     BetSlider betSlider;
     RouletteAnimation rouletteAnimation;
-    Chip chip;
     RouletteTriangles rouletteTriangles;
 
     public Gui() {
@@ -61,7 +60,6 @@ public class Gui {
 
         frame.add(chipRenderer);
      
-
         ImageIcon board = new ImageIcon("bettingboardCBL.jpg");
         labelBoard.setIcon(board);
         labelBoard.setBounds(870, 80, 454, 503);
