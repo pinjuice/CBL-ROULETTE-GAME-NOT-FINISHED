@@ -15,7 +15,7 @@ public class BettingTimer {
         this.displayLabel = displayLabel;
         this.rouletteLabel = rouletteLabel;
         this.rouletteLogic = rouletteLogic;
-        this.secondsLeft = 1;  // Initial countdown time.
+        this.secondsLeft = 10;  // Initial countdown time.
         this.timeOver = false;
 
         displayLabel.setText("Time left: "+secondsLeft +" seconds");

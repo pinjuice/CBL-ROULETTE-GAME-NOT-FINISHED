@@ -48,7 +48,7 @@ public class RouletteLogic {
 
     public void placeChipOnTriangle(int triangleIndex) {
         Point renderPoint = rouletteTriangles.renderPoints[triangleIndex];
-        ball = new Ball(0, 0, Color.BLUE);
+        ball = new Ball(0, 0, Color.WHITE);
         ball.setPosition(renderPoint.x, renderPoint.y);
         chipRenderer.addBall(ball);
     }

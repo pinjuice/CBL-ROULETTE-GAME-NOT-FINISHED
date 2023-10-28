@@ -11,6 +11,7 @@ public class Gui {
 
     ChipRenderer chipRenderer;
     ChipLogic chipLogic;
+    BallLogic ballLogic;
     BettingTimer bettingTimer;
     BettingMechanic bettingMechanic;
     Squares squares;
@@ -57,6 +58,7 @@ public class Gui {
         // Initialize BettingMechanic after BetSlider
         bettingMechanic = new BettingMechanic(squares, chipRenderer, betSlider, bettingTimer, balance);
         chipLogic = new ChipLogic(chipRenderer, bettingTimer);
+        ballLogic = new BallLogic(chipRenderer, bettingTimer);
 
         frame.add(chipRenderer);
      
