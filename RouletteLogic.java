@@ -25,7 +25,6 @@ public class RouletteLogic {
 
     public void spin() {
         int_random = rand.nextInt(upperbound);
-        System.out.println("Number that won is: " + int_random);
         updateWinningNumberDisplay();
     }
 
