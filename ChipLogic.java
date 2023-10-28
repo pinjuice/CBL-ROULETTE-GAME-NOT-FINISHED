@@ -4,13 +4,13 @@ import java.awt.event.MouseEvent;
 
 public class ChipLogic {
     private ChipRenderer chipRenderer;
-    private BettingTimer bettingTimer;
+    private RouletteAnimation rouletteAnimation;
     private Chip selectedChip;
     private Point offset = new Point(0, 0);
 
-    public ChipLogic(ChipRenderer chipRenderer, BettingTimer bettingTimer) {
+    public ChipLogic(ChipRenderer chipRenderer, RouletteAnimation rouletteAnimation) {
         this.chipRenderer = chipRenderer;
-        this.bettingTimer = bettingTimer;
+        this.rouletteAnimation = rouletteAnimation;
 
         chipRenderer.addMouseListener(new MouseAdapter() {
             @Override
@@ -33,7 +33,7 @@ public class ChipLogic {
     }
 
     private void handleMousePressed(MouseEvent e) {
-        if (!bettingTimer.isTimeOver()) {
+        if (rouletteAnimation.getIsAnimationOver()) {
             return;
         }
         Point mousePoint = e.getPoint();
@@ -47,7 +47,7 @@ public class ChipLogic {
     }
 
     private void handleMouseDragged(MouseEvent e) {
-        if (!bettingTimer.isTimeOver()) {
+        if (rouletteAnimation.getIsAnimationOver()) {
             return;
         }
         if (selectedChip != null) {

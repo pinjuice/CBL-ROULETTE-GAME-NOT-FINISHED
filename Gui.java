@@ -57,8 +57,8 @@ public class Gui {
         
         // Initialize BettingMechanic after BetSlider
         bettingMechanic = new BettingMechanic(squares, chipRenderer, betSlider, bettingTimer, balance);
-        chipLogic = new ChipLogic(chipRenderer, bettingTimer);
-        ballLogic = new BallLogic(chipRenderer, bettingTimer);
+        chipLogic = new ChipLogic(chipRenderer, rouletteAnimation);
+        ballLogic = new BallLogic(chipRenderer, rouletteAnimation);
 
         frame.add(chipRenderer);
      

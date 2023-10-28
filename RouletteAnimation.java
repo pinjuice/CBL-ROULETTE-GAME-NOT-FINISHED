@@ -10,6 +10,7 @@ public class RouletteAnimation {
     private int currentIndex = 0;
     private JLabel rouletteLabel;
     private RouletteLogic rouletteLogic;
+    private boolean isAnimationOver = false;
 
     public RouletteAnimation(JLabel rouletteLabel, RouletteLogic rouletteLogic) {
         this.rouletteLabel = rouletteLabel;
@@ -45,9 +46,14 @@ public class RouletteAnimation {
                 rouletteLabel.setIcon(images[0]); // Always stop on roulette1.png
                 rouletteLogic.placeChipOnTriangle(rouletteLogic.getWinningNumber());
                 stopTimer.stop();
+                isAnimationOver = true;
                 
             }
         });
         stopTimer.start();
+    }
+
+    public boolean getIsAnimationOver() {
+        return isAnimationOver;
     }
 }
