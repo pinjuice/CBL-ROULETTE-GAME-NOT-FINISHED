@@ -33,9 +33,6 @@ public class BallLogic {
     }
 
     private void handleMousePressed(MouseEvent e) {
-        System.out.println("Mouse Pressed");
-        System.out.println("Betting Timer Over: " + bettingTimer.isTimeOver());
-
         if (!bettingTimer.isTimeOver()) {
             return;
         }
@@ -43,7 +40,6 @@ public class BallLogic {
         for (Ball ball : chipRenderer.getBalls()) {
             if (ball.contains(mousePoint)) {
                 selectedBall = ball;
-                System.out.println("Ball Selected");
                 offset = new Point(mousePoint.x - ball.getX(), mousePoint.y - ball.getY());
                 break;
             }
@@ -51,7 +47,6 @@ public class BallLogic {
     }
 
     private void handleMouseDragged(MouseEvent e) {
-        System.out.println("Mouse Dragged");
         if (!bettingTimer.isTimeOver()) {
             return;
         }
@@ -61,14 +56,10 @@ public class BallLogic {
             int newY = mousePoint.y - offset.y;
             selectedBall.setPosition(newX, newY);
             chipRenderer.repaint();
-
-            // Log the ball's position
-            System.out.println("Ball Position: " + selectedBall.getX() + ", " + selectedBall.getY());
         }
     }
 
     private void handleMouseReleased() {
-        System.out.println("Mouse Released");
         selectedBall = null;
     }
 }
